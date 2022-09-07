@@ -1,14 +1,9 @@
-
-
-header{
+header {
     display: flex;
     flex-direction: row;
- 
+
 }
 
-.logo-image{
-    /* width: 100px;
-    height: 100px; */
+.logo-image {
     align-items: center;
-    /* padding: 10px; */
-} 
+}
