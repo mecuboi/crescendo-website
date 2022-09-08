@@ -1,4 +1,4 @@
-header {
+/* header {
     display: flex;
     flex-direction: row;
 
@@ -7,3 +7,19 @@ header {
 .logo-image {
     align-items: center;
 }
+
+aside {
+    margin-left: 20px;
+    padding-top: 0;
+}
+
+
+button.recent-search {
+    margin-top: 8%;
+}
+
+.search-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} */
