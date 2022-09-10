@@ -25,5 +25,5 @@ button.recent-search {
 } */
 
 .hide {
-    display:none;
+    display: none !important;
 }

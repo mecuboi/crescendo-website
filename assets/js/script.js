@@ -2,10 +2,16 @@ var searchBar = $('#search-bar')
 var inputEl = $('#search-input')
 var apiKey = "AIzaSyD9C2bxQ7DkETOL3OhnUY9n9ckg6UlOI1I";
 var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
+var searchResultHtml = $('#search-result-html')
+var homepageHtml = $('#homepage-html')
+var searchResultsEl = $("#search-results");
+var searchButtonEl = $("#search-button");
+
 
 function searchVideos(event) {
   event.preventDefault();
-  window.location.assign('search.html');
+    homepageHtml.addClass('hide');
+    searchResultHtml.removeClass ('hide');
   console.log(inputEl.val())
   var searchString = $(inputEl).val().trim();
   if (searchString) {

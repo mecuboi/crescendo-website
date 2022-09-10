@@ -11,7 +11,7 @@
 
 <body class="flex flex-col h-screen">
     <!-- navbar div -->
-    <div class="container mx-auto mb-2 ">
+    <div class="container mx-auto mb-2">
         <!-- NAVBAR -->
         <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -45,8 +45,9 @@
         </nav>
     </div>
 
-    <!-- body div -->
-    <div class="container mx-auto grid grid-cols-12 flex">
+
+    <!-- homepage HTML -->
+    <div class="container mx-auto grid grid-cols-12 flex" id="homepage-html">
         <aside class="md:col-span-4 col-span-12 flex flex-col gap-2 px-2 mb-2">
 
             <h2 class="text-center font-bold">Recent Search</h2>
@@ -165,15 +166,7 @@
                 $(window).ready(function () {
                     $("#slider-2").hide();
                     $("#sButton1").addClass("bg-purple-800");
-
-
                     loopSlider();
-
-
-
-
-
-
                 });
 
 
@@ -199,19 +192,15 @@
                         </div>
                 </div>
                 </form>
-        </div>
-
-
-
-
-
-
+            </div>
     </div>
+
+<!-- homepage html ends -->
 
 
 <!-- Search result html -->
 
-<div class="mb-2 dark:bg-gray-900 hide">
+<div class="mb-2 dark:bg-gray-900 hide" id="search-result-html">
   <div id="search-results" class="container mx-auto p-2 grid gap-2">
     <form class="max-w-md mx-auto">
       <label
