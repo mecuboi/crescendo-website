@@ -7,6 +7,7 @@ var homepageHtml = $('#homepage-html')
 var searchResultsEl = $("#search-results");
 var searchButtonEl = $("#search-button");
 var containerEl
+var thumbnailContainer = $('.thumbnail-container')
 
 // homepage search function
 function searchVideosHomepage(event) {
@@ -35,7 +36,7 @@ function renderVideos(data) {
     var items = data.items;
     for (var i = 0; i < items.length; i++) {
       var containerEl = $(
-        '<div class="grid grid-cols-12 border-solid border-2">'
+        '<div class="grid grid-cols-12 border-solid border-2 thumbnail-container">'
       );
       var imageEl = $(
         '<img class="col-span-12 w-full sm:col-span-6 md:col-span-3 justify-self-center p-1"/>'
@@ -57,7 +58,7 @@ function renderVideos(data) {
 //search function for other searchbar
   function searchVideos(event) {
     event.preventDefault();
-
+    thumbnailContainer.empty();
     var searchString = $(inputEl).val().trim();
     if (searchString) {
       fetch(apiEndpoint + searchString)
@@ -78,6 +79,6 @@ function renderVideos(data) {
 
 
 
-$(searchButtonEl).on("click", searchVideos);
+searchButtonEl.on("click", searchVideos);
 
 searchBar.on('submit', searchVideosHomepage)
