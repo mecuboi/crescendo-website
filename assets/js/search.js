@@ -26,6 +26,7 @@ function searchVideos(event) {
 }
 
 function renderVideos(data) {
+  $(searchResultsEl).html('');
   var items = data.items;
   for (var i = 0; i < items.length; i++) {
     var containerEl = $(
