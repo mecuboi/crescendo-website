@@ -55,12 +55,15 @@ function init() {
   
 function renderSearchList() {
     searchListContainer.html('');
+    var recentTitle = $('<h2 class="text-center font-bold">')
+        recentTitle
+            .text('Recent Searches')
+            .appendTo(searchListContainer)
 
     for (var i = 0; i < searchList.length && i < 5; i++) {
+        //this is to make the most recent one show on top
         searchList.reverse();
-
         var search = searchList[i];
-
         var recentSearchButton = $('<button class="recent-search bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">')
 
         recentSearchButton
