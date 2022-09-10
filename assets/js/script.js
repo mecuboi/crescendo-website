@@ -6,9 +6,10 @@ var searchResultHtml = $('#search-result-html')
 var homepageHtml = $('#homepage-html')
 var searchResultsEl = $("#search-results");
 var searchButtonEl = $("#search-button");
+var containerEl
 
-
-function searchVideos(event) {
+// homepage search function
+function searchVideosHomepage(event) {
   event.preventDefault();
     homepageHtml.addClass('hide');
     searchResultHtml.removeClass ('hide');
@@ -53,6 +54,30 @@ function renderVideos(data) {
     }
   }
   
-//   $(searchButtonEl).on("click", searchVideos);
+//search function for other searchbar
+  function searchVideos(event) {
+    event.preventDefault();
 
-searchBar.on('submit', searchVideos)
+    var searchString = $(inputEl).val().trim();
+    if (searchString) {
+      fetch(apiEndpoint + searchString)
+        .then(
+          function (response) {
+            return response.json();
+          },
+          function (error) {
+            console.log(error.message);
+          }
+        )
+        .then(function (data) {
+          renderVideos(data);
+        });
+    }
+  }
+
+
+
+
+$(searchButtonEl).on("click", searchVideos);
+
+searchBar.on('submit', searchVideosHomepage)
