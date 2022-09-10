@@ -47,7 +47,7 @@
 
     <!-- body div -->
     <div class="container mx-auto grid grid-cols-12  flex">
-        <aside class="col-span-4 flex flex-col gap-2 px-20">
+        <aside class="md:col-span-4 col-span-12 flex flex-col gap-2 px-4 mb-4">
 
             <h2 class="text-center font-bold">Recent Search</h2>
 
@@ -67,7 +67,7 @@
         </aside>
 
         <!-- IMAGE -->
-        <div class="col-span-8 ">
+        <div class="md:col-span-8 col-span-12">
             <!-- <img src="./assets/image/music.jfif" alt="image" class="mt-10"> -->
 
 
@@ -181,7 +181,7 @@
             <!-- SEARCH BAR -->
             <div class="flex justify-center">
                 <form class="inline-block mb-20">
-                    <label for="default-search"
+                    <label for="search-input"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
                     <div class="relative">
                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -194,7 +194,7 @@
                         <input type="search" id="default-search"
                             class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-96"
                             placeholder="Search song title" required="">
-                        <button type="submit"
+                        <button type="submit" id="search-button"
                             class=" text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Search</button>
                     </div>
             </div>
