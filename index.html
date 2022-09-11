@@ -15,7 +15,7 @@
         <!-- NAVBAR -->
         <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
-                <a href="https://flowbite.com/" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <img src="./assets/image/CC.jpg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">CRESCENDO</span>
                 </a>
@@ -47,7 +47,9 @@
 
     <!-- body div -->
     <div class="container mx-auto grid grid-cols-12  flex">
-        <aside class="col-span-4 flex flex-col gap-2 px-20">
+
+        <!-- recent search list -->
+        <aside class="md:col-span-4 col-span-12 flex flex-col gap-2 px-4 mb-4" id="search-list-container">
 
             <h2 class="text-center font-bold">Recent Search</h2>
 
@@ -67,7 +69,7 @@
         </aside>
 
         <!-- IMAGE -->
-        <div class="col-span-8 ">
+        <div class="md:col-span-8 col-span-12">
             <!-- <img src="./assets/image/music.jfif" alt="image" class="mt-10"> -->
 
 
@@ -169,11 +171,6 @@
 
                     loopSlider();
 
-
-
-
-
-
                 });
 
 
@@ -191,10 +188,10 @@
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input type="search" id="default-search"
+                        <input type="search" id="search-input"
                             class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-96"
-                            placeholder="Search song title" required="">
-                        <button type="submit"
+                            placeholder="Search music videos..." required="">
+                        <button type="submit" id="search-button"
                             class=" text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Search</button>
                     </div>
             </div>
@@ -215,22 +212,18 @@
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com/"
                     class="hover:underline">APOLLO</a>. All Rights Reserved.
             </span>
-            <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
-                </li>
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
-            </ul>
         </footer>
     </div>
+
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"></script>
+
+<script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
