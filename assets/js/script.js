@@ -18,22 +18,10 @@ function searchVideos(event) {
   inputEl.val("");
 
   storeSearchList();
-  renderSearchList();
 
-  // if (searchString) {
-  //   fetch(apiEndpoint + searchString)
-  //     .then(
-  //       function (response) {
-  //         return response.json();
-  //       },
-  //       function (error) {
-  //         console.log(error.message);
-  //       }
-  //     )
-  //     .then(function (data) {
-  //       renderVideos(data);
-  //     });
-  // }
+  if (searchString) {
+    document.location.assign('./search.html?query=' + searchString)
+  }
 }
 
 // This function is being called below and will run when the page loads.
