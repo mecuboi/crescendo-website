@@ -46,7 +46,7 @@ function renderVideos(data) {
     var detailsEl = $(
       '<div class="col-span-12 sm:col-span-6 md:col-span-9 p-1">'
     );
-    
+
     var titleEl = $(`<h2 class="font-bold"><a href=${videoId}>`).text(items[i].snippet.title);
     var descriptionEl = $("<p>").text(items[i].snippet.description);
     $(detailsEl).append(titleEl);
@@ -57,7 +57,7 @@ function renderVideos(data) {
   }
 }
 
-$(searchForm).on("submit", function(event) {
+$(searchForm).on("submit", function (event) {
   event.preventDefault();
   var searchString = $(inputEl).val().trim();
   if (searchString) {
