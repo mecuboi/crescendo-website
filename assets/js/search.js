@@ -21,6 +21,7 @@ function searchVideos(query) {
     .then(
       function (response) {
         return response.json();
+
       },
       function (error) {
         console.log(error.message);
@@ -29,6 +30,7 @@ function searchVideos(query) {
     .then(function (data) {
       renderVideos(data);
     });
+  inputEl.val("");
 }
 
 function renderVideos(data) {
