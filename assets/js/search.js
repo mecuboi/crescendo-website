@@ -34,8 +34,9 @@ function searchVideos(query) {
 function renderVideos(data) {
   $(searchResultsEl).html('');
   var items = data.items;
-  var videoId = items[i].id.videoId
+
   for (var i = 0; i < items.length; i++) {
+    var videoId = items[i].id.videoId
     var containerEl = $(
       `<a href="video.html?videoId=${videoId}><div class="grid grid-cols-12 border-solid border-2">`
     );
