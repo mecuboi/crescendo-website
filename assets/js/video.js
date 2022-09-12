@@ -1,4 +1,7 @@
 var iframeEl = $('#iframe');
+var query = document.location.search.replace('?query=', '')
+var searchForm = $('#search-form')
+var inputEl = $("#search-input");
 
 
 function initialize() {
@@ -15,4 +18,18 @@ function renderVideos(query) {
     $(iframeEl).attr('src', `https://www.youtube.com/embed/${query}?autoplay=1&mute=1`)
 
 }
+
+function searchVideos(event) {
+    event.preventDefault();
+    
+    var searchString = $(inputEl).val().trim();
+    inputEl.val("");
+    if (searchString) {
+        document.location.assign('./search.html?query=' + searchString)
+    }
+}
+
+
+
 initialize();
+searchForm.on('click', searchVideos)
