@@ -14,7 +14,7 @@ function searchVideos(event) {
   console.log("success");
 
   var searchString = $(inputEl).val().trim();
-  searchList.push(searchString);
+  searchList.unshift(searchString);
   inputEl.val("");
 
   storeSearchList();
@@ -58,7 +58,6 @@ function renderSearchList() {
 
   for (var i = 0; i < searchList.length && i < 5; i++) {
     //this is to make the most recent one show on top
-    searchList.reverse();
     var search = searchList[i];
     var recentSearchButton = $(
       '<button class="recent-search bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">'
@@ -66,6 +65,7 @@ function renderSearchList() {
 
     recentSearchButton.text(search).appendTo(searchListContainer);
   }
+  
 }
 
 searchButtonEl.on("click", searchVideos);
