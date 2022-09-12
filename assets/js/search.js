@@ -4,7 +4,7 @@ var inputEl = $("#search-input");
 var searchForm = $('#search-form')
 
 // Never push api key to GitHub
-var apiKey = "AIzaSyD9C2bxQ7DkETOL3OhnUY9n9ckg6UlOI1I";
+var apiKey = "AIzaSyARiuPdBsekJ-DE6-Y9DA9H7zBg8WRzUH4";
 var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
 
 function initialize() {
@@ -36,12 +36,12 @@ function renderVideos(data) {
   var items = data.items;
 
   for (var i = 0; i < items.length; i++) {
-    var videoId = items[i].id.videoId
+    var videoId = items[i].id.videoId;
     var containerEl = $(
-      `<a href="video.html?videoId=${videoId}><div class="grid grid-cols-12 border-solid border-2">`
+      `<a href="video.html?videoId=${videoId}" class="grid grid-cols-12 border-solid border-2">`
     );
     var imageEl = $(
-      '<img class="col-span-12 w-full sm:col-span-6 md:col-span-3 justify-self-center p-1"/>'
+      `<img class="col-span-12 w-full sm:col-span-6 md:col-span-3 justify-self-center p-1"/>`
     );
     $(imageEl).attr("src", items[i].snippet.thumbnails.medium.url);
     var detailsEl = $(
@@ -55,6 +55,7 @@ function renderVideos(data) {
     $(containerEl).append(imageEl);
     $(containerEl).append(detailsEl);
     $(searchResultsEl).append(containerEl);
+    // $(clickableContainer).append(containerEl);
   }
 }
 
