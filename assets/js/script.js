@@ -20,7 +20,7 @@ function searchVideos(event) {
   storeSearchList();
 
   if (searchString) {
-    document.location.assign('./search.html?query=' + searchString)
+    document.location.assign("./search.html?query=" + searchString);
   }
 }
 
@@ -53,10 +53,14 @@ function renderSearchList() {
 
     recentSearchButton.text(search).appendTo(searchListContainer);
   }
-  
 }
 
 searchButtonEl.on("click", searchVideos);
+
+$("aside").on("click", function (event) {
+  var recentsearchtarget = event.target.innerHTML;
+  document.location.assign("./search.html?query=" + recentsearchtarget);
+});
 
 init();
 
