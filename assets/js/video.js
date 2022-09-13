@@ -63,3 +63,4 @@ function searchVideos(event) {
 
 initialize();
 searchForm.on("submit", searchVideos);
+
