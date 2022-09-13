@@ -3,46 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Content Page</title>
   </head>
 
   <body class="flex flex-col h-screen">
-   <!-- navbar div -->
-  <div class="mb-2 bg-gray-900">
-    <!-- NAVBAR -->
-    <nav class="container mx-auto border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900">
-      <div class="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="index.html" class="flex items-center">
-          <img src="./assets/image/CC.jpg" class="rounded-full mr-3 h-6 sm:h-9" alt="Crescendo Logo" />
-          <span class="self-center text-xl font-semibold whitespace-nowrap text-white">CRESCENDO</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button"
-          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
-          aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul
-            class="flex flex-col p-4 mt-4 border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900 ">
-            <li>
-              <a href="#" data-modal-toggle="defaultModal"
-                class="block py-2 pr-4 pl-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:ptext-gray-400 hover:text-whihover:bg-gray-700 hover:text-white md:hover:bg-transparent">
-                About
-              </a>
-            </li>
-          </ul>
+    <!-- navbar div -->
+    <div class="mb-2 bg-gray-900">
+      <!-- NAVBAR -->
+      <nav
+        class="container mx-auto border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900"
+      >
+        <div
+          class="container flex flex-wrap justify-between items-center mx-auto"
+        >
+          <a href="index.html" class="flex items-center">
+            <img
+              src="./assets/image/CC.jpg"
+              class="rounded-full mr-3 h-6 sm:h-9"
+              alt="Crescendo Logo"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap text-white"
+              >CRESCENDO</span
+            >
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="flex flex-col p-4 mt-4 border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900"
+            >
+              <li>
+                <a
+                  href="#"
+                  data-modal-toggle="defaultModal"
+                  class="block py-2 pr-4 pl-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:ptext-gray-400 hover:text-whihover:bg-gray-700 hover:text-white md:hover:bg-transparent"
+                >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
 
     <!-- search bar -->
     <form id="search-form" class="mx-auto max-w-md w-full">
@@ -88,14 +117,26 @@
       </div>
     </form>
 
-  <div class="box-border container flex grid grid-cols-12 mx-auto mt-4">
-    <div id="video-player" class="col-span-12 md:col-span-8 p-2 h-full m-px justify-center">
-      <iframe id="iframe" class="aspect-video" width="100%" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div id="tinyurlAside"
-        class="col-span-12 md:col-span-4 p-2 h-full m-px items-center">
-      <form class="flex flex-col items-center">
+    <div class="box-border container flex grid grid-cols-12 mx-auto mt-4">
+      <div
+        id="video-player"
+        class="col-span-12 md:col-span-8 p-2 h-full m-px justify-center"
+      >
+        <iframe
+          id="iframe"
+          class="aspect-video"
+          width="100%"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div
+        id="tinyurlAside"
+        class="col-span-12 md:col-span-4 p-4 flex flex-col justify-center items-center border-solid border-2 border-gray-900 rounded-lg"
+      >
+        <form class="flex flex-col items-center w-full">
           <div class="mb-6 w-full">
             <input
               type="text"
@@ -113,50 +154,84 @@
             Shorten Link
           </button>
         </form>
-        </div>
+      </div>
     </div>
-  </div>
-  <!-- footer div -->
-  <div class="mt-auto bg-gray-800">
-    <footer class="container mx-auto p-4 shadow bg-gray-800">
-      <p class="text-sm text-gray-500 sm:text-center text-gray-400 text-center">
-        © 2022 APOLLO. All Rights Reserved.
-      </p>
-    </footer>
-  </div>
+    <!-- footer div -->
+    <div class="mt-auto bg-gray-800">
+      <footer class="container mx-auto p-4 shadow bg-gray-800">
+        <p
+          class="text-sm text-gray-500 sm:text-center text-gray-400 text-center"
+        >
+          © 2022 APOLLO. All Rights Reserved.
+        </p>
+      </footer>
+    </div>
 
-  <!-- Main modal -->
-<div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-  <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
-      <!-- Modal content -->
-      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+    <!-- Main modal -->
+    <div
+      id="defaultModal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
+    >
+      <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <!-- Modal header -->
-          <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                  About Us
-              </h3>
-              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  <span class="sr-only">Close modal</span>
-              </button>
+          <div
+            class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
+          >
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              About Us
+            </h3>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-toggle="defaultModal"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
           </div>
           <!-- Modal body -->
           <div class="p-6 space-y-6">
-              <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  We are team Apollo, group number 3. Our team consist of: Anisha, Matt, Chibbi and Janine. Interestingly none of us are from Australia, we are a very multicultural team.
-              </p>
-              <img src="./assets/image/groupPic.png" alt="picture of our group">
-              <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  Crescendo is a website that will help you in sharing your favorite videos in a short URL. Please enjoy the experience!
-              </p>
-          </div>         
+            <p
+              class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+            >
+              We are team Apollo, group number 3. Our team consist of: Anisha,
+              Matt, Chibbi and Janine. Interestingly none of us are from
+              Australia, we are a very multicultural team.
+            </p>
+            <img src="./assets/image/groupPic.png" alt="picture of our group" />
+            <p
+              class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+            >
+              Crescendo is a website that will help you in sharing your favorite
+              videos in a short URL. Please enjoy the experience!
+            </p>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
-</body>
-<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-  integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="assets/js/video.js"></script>
+    </div>
+  </body>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="assets/js/video.js"></script>
 </html>
