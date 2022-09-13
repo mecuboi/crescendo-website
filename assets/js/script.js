@@ -10,8 +10,6 @@ var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&max
 
 function searchVideos(event) {
   event.preventDefault();
-  console.log(searchString);
-  console.log("success");
 
   var searchString = $(inputEl).val().trim();
   searchList.unshift(searchString);

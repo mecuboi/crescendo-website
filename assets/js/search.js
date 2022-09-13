@@ -57,7 +57,6 @@ function renderVideos(data) {
     $(containerEl).append(imageEl);
     $(containerEl).append(detailsEl);
     $(searchResultsEl).append(containerEl);
-    // $(clickableContainer).append(containerEl);
   }
 }
 
@@ -69,6 +68,7 @@ $(searchForm).on("submit", function (event) {
   }
 
 });
+
 initialize();
 
 
