@@ -45,8 +45,12 @@ function renderVideos(data) {
     );
     $(imageEl).attr("src", items[i].snippet.thumbnails.medium.url);
     var detailsEl = $(
-      '<div class="col-span-12 sm:col-span-6 md:col-span-9 p-1">'
+      '<div class="col-span-12 sm:col-span-5 md:col-span-7 p-1">'
     );
+    var tinyButton = $(
+      `<button class='col-span-12 w-full sm:col-span-1 md:col-span-2 justify-self-center p-1'/>`
+    );
+
 
     var titleEl = $(`<h2 class="font-bold"><a href=${videoId}>`).text(
       items[i].snippet.title
@@ -56,6 +60,7 @@ function renderVideos(data) {
     $(detailsEl).append(descriptionEl);
     $(containerEl).append(imageEl);
     $(containerEl).append(detailsEl);
+    
     $(searchResultsEl).append(containerEl);
   }
 }
