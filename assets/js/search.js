@@ -3,6 +3,7 @@ var searchButtonEl = $("#search-button");
 var inputEl = $("#search-input");
 var searchForm = $("#search-form");
 
+
 var apiKey = "AIzaSyDZFCwcOmQb4jQ2MvZZ7vfa5AD9K9y3yUs";
 var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
 
@@ -41,15 +42,16 @@ function renderVideos(data) {
   //to loop the command on the search results length
   for (var i = 0; i < items.length; i++) {
     var videoId = items[i].id.videoId;
+    var masterContainer = $(`<div class='grid grid-cols-12 border-solid border-2'>`)
     var containerEl = $(
-      `<a href="video.html?videoId=${videoId}" class="grid grid-cols-12 border-solid border-2">`
+      `<a href="video.html?videoId=${videoId}" class=" grid grid-cols-12 col-span-12">`
     );
     var imageEl = $(
-      `<img class="col-span-12 w-full sm:col-span-6 md:col-span-3 justify-self-center p-1"/>`
+      `<img class="col-span-12 w-full sm:col-span-6 md:col-span-4 justify-self-center p-1"/>`
     );
     $(imageEl).attr("src", items[i].snippet.thumbnails.medium.url);
     var detailsEl = $(
-      '<div class="col-span-12 sm:col-span-6 md:col-span-9 p-1">'
+      '<div class="col-span-12 sm:col-span-5 md:col-span-8 p-1">'
     );
 
     var titleEl = $(`<h2 class="font-bold"><a href=${videoId}>`).text(
@@ -57,12 +59,12 @@ function renderVideos(data) {
     );
     var descriptionEl = $("<p>").text(items[i].snippet.description);
 
-    //DOM manipulation to insert the videos into our HTML page
     $(detailsEl).append(titleEl);
     $(detailsEl).append(descriptionEl);
     $(containerEl).append(imageEl);
     $(containerEl).append(detailsEl);
-    $(searchResultsEl).append(containerEl);
+    searchResultsEl.append(containerEl); 
+  
   }
 }
 
@@ -74,5 +76,6 @@ $(searchForm).on("submit", function (event) {
     document.location.assign("./search.html?query=" + searchString);
   }
 });
+
 
 initialize();
