@@ -4,14 +4,12 @@ var inputEl = $("#search-input");
 var searchList = [];
 var searchListContainer = $("#search-list-container");
 
-// Never push api key to GitHub
-var apiKey = "AIzaSyD9C2bxQ7DkETOL3OhnUY9n9ckg6UlOI1I";
-var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
 
 function searchVideos(event) {
   event.preventDefault();
 
   var searchString = $(inputEl).val().trim();
+  //to add the search list to the front of the array
   searchList.unshift(searchString);
   inputEl.val("");
 
@@ -24,7 +22,7 @@ function searchVideos(event) {
 
 // This function is being called below and will run when the page loads.
 function init() {
-  // Get stored todos from localStorage
+  // Get stored recent search list from localStorage
   var recentSearchList = JSON.parse(localStorage.getItem("recentSearch"));
   if (recentSearchList !== null) {
     searchList = recentSearchList;
@@ -33,36 +31,44 @@ function init() {
 }
 
 function storeSearchList() {
-  // Stringify and set key in localStorage to todos array
+  // Stringify and set key in localStorage to searchList array
   localStorage.setItem("recentSearch", JSON.stringify(searchList));
 }
 
 function renderSearchList() {
   searchListContainer.html("");
+  //using DOM manipulation to dynamically create the search list
   var recentTitle = $('<h2 class="text-center font-bold">');
   recentTitle.text("Recent Searches").appendTo(searchListContainer);
 
+  //Code will run as long as the list or when it reaches 5 items whichever is less
   for (var i = 0; i < searchList.length && i < 5; i++) {
-    //this is to make the most recent one show on top
+
     var search = searchList[i];
     var recentSearchButton = $(
       '<button class="recent-search bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">'
     );
+      //adding an event listener to the button so that they bring to the search page
+    $(recentSearchButton).on('click', function (event) {
+      document.location.assign("./search.html?query=" + $(event.target).text());
+    });
 
     recentSearchButton.text(search).appendTo(searchListContainer);
+
   }
 }
 
 searchButtonEl.on("click", searchVideos);
 
-$("aside").on("click", function (event) {
-  var recentsearchtarget = event.target.innerHTML;
-  document.location.assign("./search.html?query=" + recentsearchtarget);
-});
+// $(".recent-search").on("click", function (event) {
+//   var recentSearchTarget = event.target.text();
+//   document.location.assign("./search.html?query=" + recentSearchTarget);
+
+// });
 
 init();
 
-// carousel
+// carousel for the slideshow
 
 var cont = 0;
 function loopSlider() {

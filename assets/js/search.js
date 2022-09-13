@@ -3,10 +3,11 @@ var searchButtonEl = $("#search-button");
 var inputEl = $("#search-input");
 var searchForm = $("#search-form");
 
-// Never push api key to GitHub
 var apiKey = "AIzaSyARiuPdBsekJ-DE6-Y9DA9H7zBg8WRzUH4";
 var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
 
+
+//this init function is to run an API youtube search based on the query in the URL
 function initialize() {
   var query = document.location.search.replace("?query=", "");
   if (query) {
@@ -15,6 +16,7 @@ function initialize() {
   }
 }
 
+//the fetch function for the youtube API to search videos
 function searchVideos(query) {
   fetch(apiEndpoint + query)
     .then(
@@ -31,10 +33,12 @@ function searchVideos(query) {
   inputEl.val("");
 }
 
+//to render the videos
 function renderVideos(data) {
   $(searchResultsEl).html("");
   var items = data.items;
 
+  //to loop the command on the search results length
   for (var i = 0; i < items.length; i++) {
     var videoId = items[i].id.videoId;
     var containerEl = $(
@@ -52,6 +56,8 @@ function renderVideos(data) {
       items[i].snippet.title
     );
     var descriptionEl = $("<p>").text(items[i].snippet.description);
+
+    //DOM manipulation to insert the videos into our HTML page
     $(detailsEl).append(titleEl);
     $(detailsEl).append(descriptionEl);
     $(containerEl).append(imageEl);
@@ -60,6 +66,7 @@ function renderVideos(data) {
   }
 }
 
+//to enable the search bar
 $(searchForm).on("submit", function (event) {
   event.preventDefault();
   var searchString = $(inputEl).val().trim();
