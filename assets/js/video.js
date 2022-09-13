@@ -6,11 +6,13 @@ var asideEl = $("#tinyurlAside");
 var videoUrlEl = $("#videoUrl");
 var buttonEl = $("#tinyUrlBtn");
 var tinyUrlEl = $(
-  '<p class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">'
+  '<p class="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">'
 );
 
+//enable the tinyURL button to be clicked
 $(buttonEl).on("click", handleClick);
 
+//calling the tinyURL API to generate a link
 function handleClick(event) {
   event.preventDefault();
   var token = "yj3Juk60zzXWwFP2p1nrSwNMzh780fUMLZZOSKijLoeseni9pqaEISjgL6KK";
@@ -30,12 +32,14 @@ function handleClick(event) {
     .catch((error) => console.log("error", error));
 }
 
+//rendering the TinyURL link
 function displayTinyUrl(data) {
   var tinyUrl = data.data.tiny_url;
   $(tinyUrlEl).text(tinyUrl);
   $(asideEl).append(tinyUrlEl);
 }
 
+//this is to get the video id from the URL and inserting to the iframe src attribute
 function initialize() {
   var query = document.location.search.replace("?videoId=", "");
   if (query) {
@@ -51,6 +55,7 @@ function renderVideos(query) {
   $(videoUrlEl).val(`https://www.youtube.com/watch?v=${query}`);
 }
 
+//search bar function
 function searchVideos(event) {
   event.preventDefault();
 
