@@ -3,7 +3,7 @@ var searchButtonEl = $("#search-button");
 var inputEl = $("#search-input");
 var searchForm = $("#search-form");
 
-var apiKey = "AIzaSyARiuPdBsekJ-DE6-Y9DA9H7zBg8WRzUH4";
+var apiKey = "AIzaSyDZFCwcOmQb4jQ2MvZZ7vfa5AD9K9y3yUs";
 var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
 
 
