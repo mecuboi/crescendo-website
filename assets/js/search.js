@@ -51,10 +51,10 @@ function renderVideos(data) {
     var detailsEl = $(
       '<div class="col-span-12 sm:col-span-5 md:col-span-7 p-1">'
     );
-    var tinyButton = $(
-      `<button class='col-span-12 w-full sm:col-span-1 md:col-span-2 justify-self-center p-1'/>`
+    var tinyUrlButton = $(
+      `<button class="col-span-12 sm:col-span-12 md:col-span-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-2 my-2 h-10"
+    />`
     );
-
 
     var titleEl = $(`<h2 class="font-bold"><a href=${videoId}>`).text(
       items[i].snippet.title
@@ -62,11 +62,12 @@ function renderVideos(data) {
     var descriptionEl = $("<p>").text(items[i].snippet.description);
 
     //DOM manipulation to insert the videos into our HTML page
+    tinyUrlButton.text('Tiny URL');
     $(detailsEl).append(titleEl);
     $(detailsEl).append(descriptionEl);
     $(containerEl).append(imageEl);
     $(containerEl).append(detailsEl);
-    
+    $(containerEl).append(tinyUrlButton);
     $(searchResultsEl).append(containerEl);
   }
 }
