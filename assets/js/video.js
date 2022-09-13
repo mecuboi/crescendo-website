@@ -1,5 +1,5 @@
-var query = document.location.search.replace('?query=', '')
-var searchForm = $('#search-form')
+var query = document.location.search.replace("?query=", "");
+var searchForm = $("#search-form");
 var inputEl = $("#search-input");
 var iframeEl = $("#iframe");
 var asideEl = $("#tinyurlAside");
@@ -8,7 +8,6 @@ var buttonEl = $("#tinyUrlBtn");
 var tinyUrlEl = $(
   '<p class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">'
 );
-
 
 $(buttonEl).on("click", handleClick);
 
@@ -53,17 +52,14 @@ function renderVideos(query) {
 }
 
 function searchVideos(event) {
-    event.preventDefault();
-    
-    var searchString = $(inputEl).val().trim();
-    inputEl.val("");
-    if (searchString) {
-        document.location.assign('./search.html?query=' + searchString)
-    }
+  event.preventDefault();
+
+  var searchString = $(inputEl).val().trim();
+  inputEl.val("");
+  if (searchString) {
+    document.location.assign("./search.html?query=" + searchString);
+  }
 }
 
-
-
 initialize();
-searchForm.on('click', searchVideos)
-
+searchForm.on("submit", searchVideos);
