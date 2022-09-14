@@ -4,7 +4,6 @@ var inputEl = $("#search-input");
 var searchList = [];
 var searchListContainer = $("#search-list-container");
 
-
 function searchVideos(event) {
   event.preventDefault();
 
@@ -43,33 +42,24 @@ function renderSearchList() {
 
   //Code will run as long as the list or when it reaches 5 items whichever is less
   for (var i = 0; i < searchList.length && i < 5; i++) {
-
     var search = searchList[i];
     var recentSearchButton = $(
       '<button class="recent-search bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">'
     );
-      //adding an event listener to the button so that they bring to the search page
-    $(recentSearchButton).on('click', function (event) {
+    //adding an event listener to the button so that they bring to the search page
+    $(recentSearchButton).on("click", function (event) {
       document.location.assign("./search.html?query=" + $(event.target).text());
     });
 
     recentSearchButton.text(search).appendTo(searchListContainer);
-
   }
 }
 
 searchButtonEl.on("click", searchVideos);
 
-// $(".recent-search").on("click", function (event) {
-//   var recentSearchTarget = event.target.text();
-//   document.location.assign("./search.html?query=" + recentSearchTarget);
-
-// });
-
 init();
 
 // carousel for the slideshow
-
 var cont = 0;
 function loopSlider() {
   var xx = setInterval(function () {

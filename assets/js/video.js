@@ -5,8 +5,14 @@ var iframeEl = $("#iframe");
 var asideEl = $("#tinyurlAside");
 var videoUrlEl = $("#videoUrl");
 var buttonEl = $("#tinyUrlBtn");
+
+// tinyurl elements
+var containerEl = $('<div class="relative w-full">');
 var tinyUrlEl = $(
-  '<p class="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">'
+  '<p class="block p-4 w-full text-sm text-white bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">'
+);
+var copyBtnEl = $(
+  '<button id="copyBtn" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">'
 );
 
 //enable the tinyURL button to be clicked
@@ -36,7 +42,11 @@ function handleClick(event) {
 function displayTinyUrl(data) {
   var tinyUrl = data.data.tiny_url;
   $(tinyUrlEl).text(tinyUrl);
-  $(asideEl).append(tinyUrlEl);
+  $(copyBtnEl).text("Copy");
+  $(copyBtnEl).on("click", copyText(tinyUrl));
+  $(containerEl).append(tinyUrlEl);
+  $(containerEl).append(copyBtnEl);
+  $(asideEl).append(containerEl);
 }
 
 //this is to get the video id from the URL and inserting to the iframe src attribute
@@ -66,6 +76,10 @@ function searchVideos(event) {
   }
 }
 
+// function for copying text into clipboard
+function copyText(url) {
+  navigator.clipboard.writeText(url);
+}
+
 initialize();
 searchForm.on("submit", searchVideos);
-

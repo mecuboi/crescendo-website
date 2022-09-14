@@ -3,10 +3,8 @@ var searchButtonEl = $("#search-button");
 var inputEl = $("#search-input");
 var searchForm = $("#search-form");
 
-
 var apiKey = "AIzaSyDZFCwcOmQb4jQ2MvZZ7vfa5AD9K9y3yUs";
 var apiEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${apiKey}&q=`;
-
 
 //this init function is to run an API youtube search based on the query in the URL
 function initialize() {
@@ -42,7 +40,9 @@ function renderVideos(data) {
   //to loop the command on the search results length
   for (var i = 0; i < items.length; i++) {
     var videoId = items[i].id.videoId;
-    var masterContainer = $(`<div class='grid grid-cols-12 border-solid border-2'>`)
+    var masterContainer = $(
+      `<div class='grid grid-cols-12 border-solid border-2'>`
+    );
     var containerEl = $(
       `<a href="video.html?videoId=${videoId}" class=" grid grid-cols-12 col-span-12">`
     );
@@ -63,8 +63,7 @@ function renderVideos(data) {
     $(detailsEl).append(descriptionEl);
     $(containerEl).append(imageEl);
     $(containerEl).append(detailsEl);
-    searchResultsEl.append(containerEl); 
-  
+    searchResultsEl.append(containerEl);
   }
 }
 
@@ -76,6 +75,5 @@ $(searchForm).on("submit", function (event) {
     document.location.assign("./search.html?query=" + searchString);
   }
 });
-
 
 initialize();
