@@ -119,4 +119,4 @@ THEN I am presented with a shortened Url for the video
 
 ## License 📜
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mecuboi/my-profile-website/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mecuboi/crescendo-website/blob/main/LICENSE)
