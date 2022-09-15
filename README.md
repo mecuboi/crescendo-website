@@ -46,3 +46,56 @@ WHEN I click on "Shorten Link" button on the video.html
 THEN I am presented with a shortened Url for the video
 
 ```
+
+
+# Screenshots
+
+
+
+## Index HTML
+![IMAGE_DESCRIPTION](./assets/image/index.jpg)
+
+
+## Cresendo Icon that links to home
+![IMAGE_DESCRIPTION](./assets/image/icon.jpg)
+
+
+## Search bar
+![IMAGE_DESCRIPTION](./assets/image/search-bar.jpg)
+
+
+## About Us
+![IMAGE_DESCRIPTION](./assets/image/about-us.jpg)
+
+
+## Research searches bar
+![IMAGE_DESCRIPTION](./assets/image/recent-searches.jpg)
+
+
+## Search html with results
+![IMAGE_DESCRIPTION](./assets/image/search-html.jpg)
+
+
+## Video html
+![IMAGE_DESCRIPTION](./assets/image/video-html.jpg)
+
+
+## TinyUrl widget on video html
+![IMAGE_DESCRIPTION](./assets/image/tinyUrl.jpg)
+
+
+
+## Credits 📑	 
+
+ 🔹Matthew Dharmawan Jusuf - Github [Profile](https://github.com/mecuboi/)
+
+ 🔹Anisha Sapkota - Github [Profile](https://github.com/anisha-sapkota)
+
+ 🔹Janine Michelle De Guzman-Policarpio - Github [Profile](https://github.com/jmdg1023)
+
+ 🔹Chibuike Okoye - Github [Profile](https://github.com/Notchibby)
+
+
+## License 📜
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mecuboi/my-profile-website/blob/main/LICENSE)
