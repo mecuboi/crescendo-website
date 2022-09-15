@@ -12,17 +12,25 @@
 
 🔸 Site is live [HERE](https://mecuboi.github.io/crescendo-website/)
 
-## Learning Resources 🔗
+## Installation ✅
 
-🔸 [Tailwind Toolbox](https://tailwindtoolbox.com/)
+🟢 We first created 3 separate html for the 3 different page of the website
 
-🔸 [Tailwind CSS](https://tailwindcss.com/)
+🟢 We follow the design that we've created in our wireframe using tailwind as our CSS tool
 
-🔸 [YouTube Data API v3 Tutorial](https://www.youtube.com/watch?v=TE66McLMMEw)
+🟢 Once we are happy with the design, we then use JS to dynamically create the recent search, search result and content page
 
-🔸 [TinyUrl](https://tinyurl.com/app/dev)
+🟢 The next step is then to develop the logic for each of the website's function
 
-🔸 [Clipboard copy](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp)
+🟢 We use the help of jQuery for most of our logic
+
+🟢Develop the logic for search bar in each page, carousel image, rendering youtube video result to our page, rendering the video in the   
+  content page, fetch logic for youtube and tiny url, logic to dynamically render the tiny URL link in the content page, and logic to set recent search to local storage
+  
+🟢 Then we create a modal to pop up when the about button is clicked
+
+🟢 After all functionalities are working, we just polished up the UI
+
 
 ## User Story 👨
 
@@ -48,11 +56,12 @@ THEN I am presented with a shortened Url for the video
 ```
 
 
+
 # Screenshots
 
 
 
-## Index HTML
+## Index HTML / Homepage
 ![IMAGE_DESCRIPTION](./assets/image/index.jpg)
 
 
@@ -83,7 +92,19 @@ THEN I am presented with a shortened Url for the video
 ## TinyUrl widget on video html
 ![IMAGE_DESCRIPTION](./assets/image/tinyUrl.jpg)
 
+## Learning Resources 🔗
 
+🔸 [Tailwind Toolbox](https://tailwindtoolbox.com/)
+
+🔸 [Tailwind CSS](https://tailwindcss.com/)
+
+🔸 [YouTube Data API v3 Tutorial](https://www.youtube.com/watch?v=TE66McLMMEw)
+
+🔸 [TinyUrl](https://tinyurl.com/app/dev)
+
+🔸 [Clipboard copy](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp)
+
+🔸 [Flowbite](https://flowbite.com)
 
 ## Credits 📑	 
 
